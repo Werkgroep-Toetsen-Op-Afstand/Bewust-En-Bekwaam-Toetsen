@@ -1,13 +1,12 @@
 ---
-title: "Untitled"
-output: 
-  flexdashboard::flex_dashboard:
-    orientation: columns
-    vertical_layout: fill
+title  : "Assessment Tree"
+author : "Klinkenberg"
+date   : "4/6/2017"
+output : html_document
 ---
 
 ```{r setup, include=FALSE}
-library(flexdashboard)
+# Install the following three packages if not available.
 
 if(!"collapsibleTree" %in% installed.packages()) { install.packages("collapsibleTree") };
 if(!"data.tree"       %in% installed.packages()) { install.packages("data.tree")       };
@@ -16,11 +15,6 @@ library("collapsibleTree")
 library("readxl")
 library("data.tree")
 ```
-
-Column {data-width=650}
------------------------------------------------------------------------
-
-### Chart A
 
 Assessment decision tree for tool selection based on answer types. Select the item type you want to use and find out what kind of assessment application to use.
 
@@ -37,19 +31,9 @@ collapsibleTree(assessment.tree,
                )
 ```
 
+Here the application categories are:
 
-Column {data-width=350}
------------------------------------------------------------------------
-
-### Chart B
-
-```{r}
-
-```
-
-### Chart C
-
-```{r}
-
-```
-
+* Generic assessment tool (e.g. QMP, Remindo, TestVision)
+* Grading tool for written assignments (e.g. TurnitIn, GradeWorks)
+* Parameterised assessment tool (e.g. MapleTA, SOWISO)
+* LMS (Blackboard, Canvas)
