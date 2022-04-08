@@ -1,3 +1,3 @@
 # Bewust en Bekwaam Toetsen
 
-Kennistoets over Toetsen
+Kennistoetsen over Toetsing
