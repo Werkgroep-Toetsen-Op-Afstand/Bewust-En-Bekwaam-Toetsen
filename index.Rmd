@@ -1,9 +1,9 @@
 ---
-title: "Untitled"
+title: "Kennistoetsen over toetsing"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
-    vertical_layout: fill
+    vertical_layout: scroll
 ---
 
 ```{r setup, include=FALSE}
@@ -17,10 +17,29 @@ library("readxl")
 library("data.tree")
 ```
 
+
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Uitleg
+
+**Over de tool** 
+
+Het toetsweb is onderdeel van de methodiek De Toetsing Getoetst, ontwikkeld door de HAN en Zuyd Hogeschool. Lector Tamara van Schilt-Mol was daar vanaf het begin nauw bij betrokken. "In 2016 introduceerden we het toetsweb: een helder 'plaatje' van de verschillende toetsentiteiten en ontwikkelingsfasen, die samen de (duurzame) kwaliteit van toetsing bepalen." 
+
+Maar wat zijn nu die toetsentiteiten en ontwikkelingsfasen in het toetsweb? Laten we dat verduidelijken vóór Tamara toelicht wat de vernieuwingen zijn. Onder de toetsentiteiten vallen 5 componenten: toetsen/toetstaken, toetsprogramma, toetsbeleid, toetsorganisatie en toetsbekwaamheid. Daarnaast zijn er de 4 ontwikkelingsfasen, op het (oplopende) niveau van activiteiten-, proces-, systeem- tot ketengeoriënteerd.  
+
+Het toetsweb is een instrument om samen in gesprek te gaan en beleid te bepalen, vertelt Tamara: "Scholen of opleidingen kunnen per entiteit bepalen in welke ontwikkelingsfase ze zitten en vervolgens waar ze naartoe willen. Ze zien dan meteen - kijk maar naar de afbeelding - dat er disbalans ontstaat bij te veel of te weinig aandacht voor 1 entiteit of bij te weinig aandacht voor de onderlinge verbondenheid. Het web trekt dan scheef."  
+
+Op diezelfde manier leiden uiteenlopende fasen van ontwikkeling tot een negatief (scheef) effect op de totale toetskwaliteit. Is bijvoorbeeld het toetsbeleid (nog) niet transparant? Dan werkt dat door op de kwaliteit van toetsprogramma's, toetsen en de onderliggende toetstaken. Tamara: "Het toetsweb helpt te bepalen aan welke touwtjes je moet trekken, en hoe hard."? 
+
+
+```{r}
+
+```
+
+
+### Beslisboom
 
 Assessment decision tree for tool selection based on answer types. Select the item type you want to use and find out what kind of assessment application to use.
 
@@ -28,28 +47,29 @@ Assessment decision tree for tool selection based on answer types. Select the it
 # Read .xlsx file
 assessment.tree <- read_excel("assessment_tree.xlsx")
 
+assessment.tree$tooltip <- "onze eerste tooltip test"
+
 # Create tree
-collapsibleTree(assessment.tree,
+collapsibleTreeNetwork(assessment.tree,
                 root      = "Question Type",        # Specify root name. This can be any string
                 hierarchy = names(assessment.tree), # Use column headers from .xlsx file as branches
                 width     = 800,                    # Set width in pixels
-                fontSize  = 14                      # Set font size
+                fontSize  = 11,                      # Set font size
+                tooltipHtml = "tooltip"
                )
 ```
+
 
 
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Overige informatie
 
-```{r}
+[**SURF Werkgroep Toetsen op Afstand**](https://www.versnellingsplan.nl/werkgroep-toetsen-op-afstand/)
 
+
+
+```{r, out.width='100%', fig.align='center'}
+knitr::include_graphics('images/assessment.jpg')
 ```
-
-### Chart C
-
-```{r}
-
-```
-
