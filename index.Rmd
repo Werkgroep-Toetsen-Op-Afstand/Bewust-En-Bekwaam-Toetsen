@@ -43,21 +43,64 @@ Op diezelfde manier leiden uiteenlopende fasen van ontwikkeling tot een negatief
 
 Assessment decision tree for tool selection based on answer types. Select the item type you want to use and find out what kind of assessment application to use.
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, eval=TRUE}
 # Read .xlsx file
 assessment.tree <- read_excel("assessment_tree.xlsx")
 
-assessment.tree$tooltip <- "onze eerste tooltip test"
+assessment.tree$tooltip <- paste(assessment.tree$application, '<br><a href="">klik</a>')
 
 # Create tree
-collapsibleTreeNetwork(assessment.tree,
-                root      = "Question Type",        # Specify root name. This can be any string
-                hierarchy = names(assessment.tree), # Use column headers from .xlsx file as branches
-                width     = 800,                    # Set width in pixels
-                fontSize  = 11,                      # Set font size
+collapsibleTree(assessment.tree,
+                root        = "Question Type",        # Specify root name. This can be any string
+                hierarchy   = c("question.type",
+                                "question.options",
+                                "assessment.type"), # Use column headers from .xlsx file as branches
+                width       = 800,                    # Set width in pixels
+                fontSize    = 11,                      # Set font size
+                tooltip     = TRUE,
                 tooltipHtml = "tooltip"
                )
 ```
+
+```{r, echo=FALSE, eval=FALSE}
+# Create a simple org chart
+org <- data.frame(
+  Manager = c(
+    NA, "Ana", "Ana", "Bill", "Bill", "Bill", "Claudette", "Claudette", "Danny",
+    "Fred", "Fred", "Grace", "Larry", "Larry", "Nicholas", "Nicholas"
+  ),
+  Employee = c(
+    "Ana", "Bill", "Larry", "Claudette", "Danny", "Erika", "Fred", "Grace",
+    "Henri", "Ida", "Joaquin", "Kate", "Mindy", "Nicholas", "Odette", "Peter"
+  ),
+  Title = c(
+    "President", "VP Operations", "VP Finance", "Director", "Director", "Scientist",
+    "Manager", "Manager", "Jr Scientist", "Operator", "Operator", "Associate",
+     "Analyst", "Director", "Accountant", "Accountant"
+  )
+)
+
+# Add in colors and sizes
+org$Color <- org$Title
+levels(org$Color) <- colorspace::rainbow_hcl(11)
+
+# Use unsplash api to add in random photos to tooltip
+org$tooltip <- paste0(
+  org$Employee,
+  "<br>Title: ",
+  org$Title,
+  "<br><img src='https://source.unsplash.com/collection/385548/150x100'>"
+)
+
+collapsibleTreeNetwork(
+  org,
+  attribute = "Title",
+  fill = "Color",
+  nodeSize = "leafCount",
+  tooltipHtml = "tooltip"
+)
+```
+
 
 
 
