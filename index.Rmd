@@ -107,6 +107,12 @@ collapsibleTreeNetwork(
   pointer-events: all;
 
 }
+
+div.tooltip {
+
+  pointer-events: all;
+
+}
 ```
 
 
@@ -120,7 +126,7 @@ library("collapsibleTree")
 
 assessment.network <- read_excel("assessment_network.xlsx")
 
-tooltip.text = '"<h1>%s</h1>\n<p>%s</p>\n<p>Go <a href="%s">Here</a></p>'
+tooltip.text = '<h3>%s</h3>\n<p>%s</p>\n<p>Go <a href="%s">Here</a></p>'
 
 assessment.network$tooltip <- sprintf(tooltip.text, 
                                       assessment.network$title, 
