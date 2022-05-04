@@ -9,14 +9,13 @@ output:
 ```{r setup, include=FALSE}
 library(flexdashboard)
 
-if(!"collapsibleTree" %in% installed.packages()) { install.packages("collapsibleTree") };
+# if(!"collapsibleTree" %in% installed.packages()) { install.packages("collapsibleTree") };
 if(!"data.tree"       %in% installed.packages()) { install.packages("data.tree")       };
 if(!"readxl"          %in% installed.packages()) { install.packages("readxl")          };
-library("collapsibleTree")
+# library("collapsibleTree")
 library("readxl")
 library("data.tree")
 ```
-
 
 Column {data-width=650}
 -----------------------------------------------------------------------
@@ -43,7 +42,7 @@ Op diezelfde manier leiden uiteenlopende fasen van ontwikkeling tot een negatief
 
 Assessment decision tree for tool selection based on answer types. Select the item type you want to use and find out what kind of assessment application to use.
 
-```{r, echo=FALSE, eval=TRUE}
+```{r, echo=FALSE, eval=FALSE}
 # Read .xlsx file
 assessment.tree <- read_excel("assessment_tree.xlsx")
 
@@ -101,6 +100,39 @@ collapsibleTreeNetwork(
 )
 ```
 
+```{css}
+.tooltip {
+
+  color: red;
+  pointer-events: all;
+
+}
+```
+
+
+
+
+
+```{r}
+# install.packages("devtools") # if you have not installed "devtools" package
+# devtools::install_github("ShKlinkenberg/collapsibleTree")
+library("collapsibleTree")
+
+assessment.network <- read_excel("assessment_network.xlsx")
+
+tooltip.text = '"<h1>%s</h1>\n<p>%s</p>\n<p>Go <a href="%s">Here</a></p>'
+
+assessment.network$tooltip <- sprintf(tooltip.text, 
+                                      assessment.network$title, 
+                                      "Look at this", 
+                                      "www.surf.nl")
+
+collapsibleTreeNetwork(
+  assessment.network,
+  attribute = "title",
+  tooltipHtml = "tooltip"
+)
+```
 
 
 
