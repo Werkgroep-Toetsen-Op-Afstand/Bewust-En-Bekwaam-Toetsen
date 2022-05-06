@@ -32,12 +32,6 @@ Het toetsweb is een instrument om samen in gesprek te gaan en beleid te bepalen,
 
 Op diezelfde manier leiden uiteenlopende fasen van ontwikkeling tot een negatief (scheef) effect op de totale toetskwaliteit. Is bijvoorbeeld het toetsbeleid (nog) niet transparant? Dan werkt dat door op de kwaliteit van toetsprogramma's, toetsen en de onderliggende toetstaken. Tamara: "Het toetsweb helpt te bepalen aan welke touwtjes je moet trekken, en hoe hard."? 
 
-
-```{r}
-
-```
-
-
 ### Beslisboom
 
 Assessment decision tree for tool selection based on answer types. Select the item type you want to use and find out what kind of assessment application to use.
@@ -100,20 +94,7 @@ collapsibleTreeNetwork(
 )
 ```
 
-```{css}
-.tooltip {
 
-  color: red;
-  pointer-events: all;
-
-}
-
-div.tooltip {
-
-  pointer-events: all;
-
-}
-```
 
 
 
@@ -131,12 +112,13 @@ tooltip.text = '<h3>%s</h3>\n<p>%s</p>\n<p>Go <a href="%s">Here</a></p>'
 assessment.network$tooltip <- sprintf(tooltip.text, 
                                       assessment.network$title, 
                                       "Look at this", 
-                                      "www.surf.nl")
+                                      "https://www.surf.nl")
 
 collapsibleTreeNetwork(
   assessment.network,
   attribute = "title",
-  tooltipHtml = "tooltip"
+  tooltipHtml = "tooltip",
+  zoomable = FALSE
 )
 ```
 
