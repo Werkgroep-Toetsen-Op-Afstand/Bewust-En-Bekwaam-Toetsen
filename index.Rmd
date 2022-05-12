@@ -134,9 +134,8 @@ Column {data-width=350}
 * Tamara van Schilt-Mol (HAN)
 * Desirée Joosten-ten Brinke (OU)
 * Masterstudent Toetsdeskundige
+* [**SURF Werkgroep Toetsen op Afstand**](https://www.versnellingsplan.nl/werkgroep-toetsen-op-afstand/)
 
-[**SURF Werkgroep Toetsen op Afstand**](https://www.versnellingsplan.nl/werkgroep-toetsen-op-afstand/)
-
-```{r, out.width='100%', fig.align='center'}
-knitr::include_graphics('images/werkgroep-icoon.png')
+```{r, out.width='50%', fig.align='center'}
+knitr::include_graphics('images/logos-2.png')
 ```
