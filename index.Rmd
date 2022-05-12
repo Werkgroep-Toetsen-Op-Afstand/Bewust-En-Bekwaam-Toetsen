@@ -2,8 +2,13 @@
 title: "Kennistoetsen over toetsing"
 output: 
   flexdashboard::flex_dashboard:
+    theme: yeti
+    css: style.css
     orientation: columns
     vertical_layout: scroll
+    social: [ "linkedin", "facebook", "menu" ]
+    source_code: embed
+
 ---
 
 ```{r setup, include=FALSE}
@@ -24,17 +29,11 @@ Column {data-width=650}
 
 **Over de tool** 
 
-Het toetsweb is onderdeel van de methodiek De Toetsing Getoetst, ontwikkeld door de HAN en Zuyd Hogeschool. Lector Tamara van Schilt-Mol was daar vanaf het begin nauw bij betrokken. "In 2016 introduceerden we het toetsweb: een helder 'plaatje' van de verschillende toetsentiteiten en ontwikkelingsfasen, die samen de (duurzame) kwaliteit van toetsing bepalen." 
+De afgelopen jaren is er in het hoger onderwijs toenemende aandacht voor toetsbekwaamheid. Toetsbekwaamheid maakt in het hbo expliciet onderdeel uit van de Basiskwalificatie Didactische Bekwaamheid (BDB, vergelijkbaar met BKO in wo). Alle hbo-docenten moeten dan ook beschikken over de zogenoemde ‘basiskwalificatie examinering’ (bke) die onderdeel is van de BDB. In het project ‘Je Ogen Uitkijken’ worden momenteel kennis, handvatten en tools ontwikkeld om ‘voortdurende toetsbekwaamheid’ in het hoger onderwijs te ondersteunen. Het instrument ‘Bewust en bekwaam toetsen en beoordelen’ kan hier een mooie bijdrage aan leveren. 
 
-Maar wat zijn nu die toetsentiteiten en ontwikkelingsfasen in het toetsweb? Laten we dat verduidelijken vóór Tamara toelicht wat de vernieuwingen zijn. Onder de toetsentiteiten vallen 5 componenten: toetsen/toetstaken, toetsprogramma, toetsbeleid, toetsorganisatie en toetsbekwaamheid. Daarnaast zijn er de 4 ontwikkelingsfasen, op het (oplopende) niveau van activiteiten-, proces-, systeem- tot ketengeoriënteerd.  
+De tool bestaat uit een conceptmap waarin het concept 'toetsing' wordt geoperationaliseerd. Bij elk onderdeel van de conceptmap hoort een kennistoets. Ook bevat de tool een overkoepelende kennistoets voor het gehele concept 'toetsing'. 
 
-Het toetsweb is een instrument om samen in gesprek te gaan en beleid te bepalen, vertelt Tamara: "Scholen of opleidingen kunnen per entiteit bepalen in welke ontwikkelingsfase ze zitten en vervolgens waar ze naartoe willen. Ze zien dan meteen - kijk maar naar de afbeelding - dat er disbalans ontstaat bij te veel of te weinig aandacht voor 1 entiteit of bij te weinig aandacht voor de onderlinge verbondenheid. Het web trekt dan scheef."  
-
-Op diezelfde manier leiden uiteenlopende fasen van ontwikkeling tot een negatief (scheef) effect op de totale toetskwaliteit. Is bijvoorbeeld het toetsbeleid (nog) niet transparant? Dan werkt dat door op de kwaliteit van toetsprogramma's, toetsen en de onderliggende toetstaken. Tamara: "Het toetsweb helpt te bepalen aan welke touwtjes je moet trekken, en hoe hard."? 
-
-### Beslisboom
-
-Assessment decision tree for tool selection based on answer types. Select the item type you want to use and find out what kind of assessment application to use.
+### Conceptmap
 
 ```{r, echo=FALSE, eval=FALSE}
 # Read .xlsx file
@@ -129,10 +128,15 @@ Column {data-width=350}
 
 ### Overige informatie
 
+**Actualisatie en ontsluiting van het instrument door:**
+
+* Kelly Beekman (Fontys, projectleider)
+* Tamara van Schilt-Mol (HAN)
+* Desirée Joosten-ten Brinke (OU)
+* Masterstudent Toetsdeskundige
+
 [**SURF Werkgroep Toetsen op Afstand**](https://www.versnellingsplan.nl/werkgroep-toetsen-op-afstand/)
 
-
-
 ```{r, out.width='100%', fig.align='center'}
-knitr::include_graphics('images/assessment.jpg')
+knitr::include_graphics('images/werkgroep-icoon.png')
 ```
