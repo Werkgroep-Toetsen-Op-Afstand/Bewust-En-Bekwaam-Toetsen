@@ -8,7 +8,6 @@ output:
     vertical_layout: scroll
     social: [ "linkedin", "facebook", "menu" ]
     source_code: embed
-
 ---
 
 ```{r setup, include=FALSE}
@@ -139,3 +138,11 @@ Column {data-width=350}
 ```{r, out.width='50%', fig.align='center'}
 knitr::include_graphics('images/logos-2.png')
 ```
+
+--------
+
+```{html}
+<iframe src="https://werkgroep-toetsen-op-afstand.github.io/Kennistoetsen-over-Toetsing/conceptmap.html" style="height:200px;width:300px;" title="Iframe Example"></iframe>
+```
+
+<iframe src="https://werkgroep-toetsen-op-afstand.github.io/Kennistoetsen-over-Toetsing/conceptmap.html" style="height:200px;width:300px;" title="Iframe Example"></iframe>
